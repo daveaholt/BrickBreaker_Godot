@@ -40,6 +40,13 @@ Right={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Ball"
+2d_render/layer_2="Paddle"
+2d_render/layer_3="Walls"
+2d_render/layer_4="Bricks"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -7,7 +7,9 @@
 radius = 8.0
 
 [node name="Ball" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_a1mhu")
+Speed = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
