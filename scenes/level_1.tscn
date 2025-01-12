@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhmnyumxbwa8a"]
+[gd_scene load_steps=3 format=3 uid="uid://dhmnyumxbwa8a"]
 
 [ext_resource type="PackedScene" uid="uid://dndw2hebhl0fy" path="res://scenes/paddle.tscn" id="2_5v6ff"]
+[ext_resource type="PackedScene" uid="uid://24bvotpamxmd" path="res://scenes/ball.tscn" id="2_355m4"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(513, 288)
 
-[node name="Paddle" parent="." node_paths=PackedStringArray("Camera") instance=ExtResource("2_5v6ff")]
-position = Vector2(521, 552)
+[node name="Paddle" parent="." node_paths=PackedStringArray("Camera", "Ball") instance=ExtResource("2_5v6ff")]
+position = Vector2(512, 552)
 Camera = NodePath("../Camera2D")
+Speed = 250
+Ball = NodePath("../Ball")
+
+[node name="Ball" parent="." instance=ExtResource("2_355m4")]
+position = Vector2(512, 448)
