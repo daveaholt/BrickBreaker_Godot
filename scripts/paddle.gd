@@ -11,13 +11,17 @@ var original_y_location: float
 
 @export var Camera: Camera2D
 @export var Speed = 200
-@export var Ball: Ball
+@export var ball: Ball
 
 func _ready():
 	camera_rect = Camera.get_viewport_rect()
 	half_screen_x = camera_rect.size.x / 2
 	half_paddle_x = $Sprite2D.texture.get_width() / 8
 	original_y_location = global_position.y
+	ball.ball_lost.connect(on_ball_lost)
+	
+func on_ball_lost():
+	is_ball_ready = false
 	
 func _physics_process(delta):
 	linear_velocity = direction * Speed * delta * 225
@@ -40,6 +44,6 @@ func _input(event):
 		direction = Vector2.ZERO
 		
 	if !is_ball_ready && direction != Vector2.ZERO:
-		Ball.start_ball()
+		ball.start_ball()
 		is_ball_ready = true
 
